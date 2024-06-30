@@ -5,6 +5,7 @@ import pygetwindow as gw
 import easyocr
 import numpy
 import cv2
+import itempick
 
 boundaries = [      
     ([50, 200, 50], [100, 255, 100]),    #set item
@@ -58,4 +59,5 @@ if __name__ == "__main__":
     reader = easyocr.Reader(['ko','en'], gpu=True)
     result = reader.readtext(pixel)
 
-    print(result)
+    #print(result)
+    itempick.item_pick(result, x1, y1)
